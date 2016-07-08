@@ -432,4 +432,15 @@ function yoast_wpseo_self_deactivate() {
 	}
 }
 
+require WPSEO_PATH . '/inc/updater.php';
 
+/**
+ * 从 Github 更新插件
+ */
+$config = [
+	'owner'    => 'iwillhappy1314',
+	'repo'     => 'wizhi-seo',
+	'basename' => 'wizhi-seo/wp-seo.php',
+];
+
+new WP_GitHub_Updater( $config );
